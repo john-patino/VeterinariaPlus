@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="ICrudPropietario.cs" />
     <Compile Include="ICrudMascota.cs" />
+    <Compile Include="ICrudRaza.cs" />
+    <Compile Include="ICrudVeterinario.cs" />
     <Compile Include="ServicioMascota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioPropietario.cs" />
+    <Compile Include="ServicioRaza.cs" />
+    <Compile Include="ServicioVeterinario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

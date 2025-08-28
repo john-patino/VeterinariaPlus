@@ -8,6 +8,10 @@ namespace ENTITY
 {
     public class Raza
     {
+        public Raza()
+        {
+            
+        }
         public Raza(int id, string nombreRaza)
         {
             Id = id;
