@@ -65,7 +65,7 @@ namespace Presentacion
             Console.SetCursorPosition(28, 6); Console.WriteLine("NOMBRE");
             Console.SetCursorPosition(40, 6); Console.WriteLine("TELEFONO");
 
-            foreach (var item in servicio.ObtenerTodas())
+            foreach (var item in servicioPropietario.ObtenerTodas())
             {
                 Console.SetCursorPosition(15, 8 + salto); Console.Write(item.Id);
                 Console.SetCursorPosition(28, 8 + salto); Console.Write(item.Nombre);
@@ -89,7 +89,7 @@ namespace Presentacion
             Console.WriteLine("Telefono: ");
             propietario.Telefono = (Console.ReadLine());
 
-            var mensaje = servicio.Agregar(propietario);
+            var mensaje = servicioPropietario.Agregar(propietario);
             Console.WriteLine(mensaje);
             Console.ReadKey();
         }
