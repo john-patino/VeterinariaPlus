@@ -18,5 +18,10 @@ namespace ENTITY
             Nombre = nombre;
             Telefono = telefono;
         }
+
+        public override string Formatear()
+        {
+            return $"{Id};{Nombre};{Telefono}";
+        }
     }
 }

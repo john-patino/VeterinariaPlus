@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BLL;
+
 using ENTITY;
 using System;
 using System.Collections.Generic;
@@ -12,28 +13,30 @@ namespace Prueba
     {
         static void Main(string[] args)
         {
-            PropietarioRepository repo = new PropietarioRepository();
+            ServicioVeterinario servicio = new ServicioVeterinario();
 
-            Propietario pedro = new Propietario(1,"pedro","46468855");
-            Propietario juan = new Propietario(1, "juan", "46468855");
+            Veterinario javier = new Veterinario
+            {
+                Id = 3,
+                Nombre = "Dr. Javier Méndez",
+                Telefono = "3021234567"
+            };
 
-            //Console.WriteLine(repo.Agregar(pedro));
-            //Console.WriteLine(repo.Agregar(juan));
-            //Console.WriteLine(repo.Agregar(pedro));
-            //Console.WriteLine(repo.Agregar(juan));
-            //Console.WriteLine(repo.Agregar(pedro));
-            //Console.WriteLine(repo.Agregar(juan));
-            //Console.WriteLine(repo.Agregar(pedro));
-            //Console.WriteLine(repo.Agregar(pedro));
-            //Console.WriteLine(repo.Agregar(juan));
-            //Console.WriteLine(repo.Agregar(juan));
-            var lista = repo.ObtenerTodas();
+            Veterinario ana = new Veterinario
+            {
+                Id = 2,
+                Nombre = "Dra. Ana Torres",
+                Telefono = "3019876543"
+            };
 
+
+            //Console.WriteLine(servicio.Agregar(javier));
+
+            var lista = servicio.ObtenerTodas();
             foreach (var item in lista)
             {
-                Console.WriteLine($"{item.Id} ---> {item.Nombre}");
+                Console.WriteLine($"{item.Id} --> {item.Nombre}  --> {item.Telefono}");
             }
-
             Console.ReadKey();
         }
     }

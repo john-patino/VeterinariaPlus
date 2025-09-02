@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICrud.cs" />
+    <Compile Include="ICrudVetrinario.cs" />
     <Compile Include="PropietarioRepository.cs" />
     <Compile Include="RazaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioRepo.cs" />
+    <Compile Include="VeterinarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTITY\ENTITY.csproj">

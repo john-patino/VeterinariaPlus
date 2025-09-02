@@ -1,4 +1,5 @@
-﻿using ENTITY;
+﻿using DAL;
+using ENTITY;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioVeterinario : ICrudVeterinario
+    public class ServicioVeterinario : ICrud<Veterinario>
     {
         List<Veterinario> listaVeterinarios;
+        VeterinarioRepository veterinarioRepository;
         public ServicioVeterinario()
         {
-            listaVeterinarios = new List<Veterinario>();
+            veterinarioRepository = new VeterinarioRepository();
+            listaVeterinarios = veterinarioRepository.ObtenerTodas();
         }
         public bool Actualizar(Veterinario veterinario)
         {
@@ -22,8 +25,9 @@ namespace BLL
         public string Agregar(Veterinario veterinario)
         {
             //validar
-            listaVeterinarios.Add(veterinario);
-            return $"Veterinario agregado con el nombre {veterinario.Nombre}";
+           var mensaje= veterinarioRepository.Agregar(veterinario);
+            listaVeterinarios = veterinarioRepository.ObtenerTodas();
+            return mensaje;
         }
 
         public bool Eliminar(int id)

@@ -12,5 +12,7 @@ namespace ENTITY
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         //public DateTime FechaNacimiento { get; set; }
+
+        public abstract string Formatear();// aagrega el ; entre atributos
     }
 }

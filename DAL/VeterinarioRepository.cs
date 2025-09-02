@@ -1,40 +1,38 @@
 ﻿using ENTITY;
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PropietarioRepository: ICrud<Propietario>
+    public class VeterinarioRepository: ICrud<Veterinario>
     {
-        private string ruta="propietario.txt";
+        private string ruta="veterinario.txt";
 
-        public bool Actualizar(Propietario entity)
+        public bool Actualizar(Veterinario entity)
         {
             throw new NotImplementedException();
         }
 
-        public string Agregar(Propietario entity)
+        public string Agregar(Veterinario entity)
         {
             try
             {
                 //1
-                StreamWriter escritor = new StreamWriter(ruta, true);
+                StreamWriter escritor = new StreamWriter(ruta,true);
                 //2
-                escritor.WriteLine($"{entity.Id};{entity.Nombre};{entity.Telefono}");
+                escritor.WriteLine(entity.Formatear());
                 //3
                 escritor.Close();
-                return $"se guardo el propietario {entity.Nombre}";
+                return $"se guardo el veterinario {entity.Nombre}";
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
-           
         }
 
         public bool Eliminar(int id)
@@ -42,20 +40,21 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public Propietario ObtenerPorId(int id)
+        public Veterinario ObtenerPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Propietario> ObtenerTodas()
+        public List<Veterinario> ObtenerTodas()
         {
             try
             {
-                List<Propietario> lista = new List<Propietario>();
                 StreamReader lector = new StreamReader(ruta);
-             
-                while (! lector.EndOfStream)
+                List<Veterinario> lista = new List<Veterinario>();
+
+                while (!lector.EndOfStream)
                 {
+
                     lista.Add(Mappear(lector.ReadLine()));
                 }
                 lector.Close();
@@ -68,15 +67,19 @@ namespace DAL
             }
         }
 
-        private Propietario Mappear(string linea)
+        private Veterinario Mappear(string linea)
         {
-            Propietario propietario = new Propietario();
-            //var aux = linea.Split(';');
+            Veterinario veterinario = new Veterinario();
 
-            propietario.Id = int.Parse(linea.Split(';')[0]);
-            propietario.Nombre = linea.Split(';')[1];
-            propietario.Telefono = linea.Split(';')[2];
-            return propietario;
+            var aux = linea.Split(';');
+
+            veterinario.Id = int.Parse(aux[0]);
+            veterinario.Nombre = aux[1];
+            veterinario.Telefono = aux[2];
+
+            return veterinario;
         }
+
+               
     }
 }

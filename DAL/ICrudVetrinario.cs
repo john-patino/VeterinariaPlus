@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface ICrud<T>
+    public interface ICrudVetrinario<T>
     {
         string Agregar(T entity);
         T ObtenerPorId(int id);
         List<T> ObtenerTodas();
         bool Actualizar(T entity);
         bool Eliminar(int id);
-       
+
     }
 }
