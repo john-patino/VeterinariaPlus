@@ -1,4 +1,5 @@
 ﻿using ENTITY;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace BLL
     public class ServicioRaza : ICrudRaza
     {
         List<Raza> razas;
+        RazaRepository razaRepository;
         public ServicioRaza()
         {
-            razas = new List<Raza>();
+            razaRepository = new RazaRepository();
+            razas = razaRepository.ObtenerTodas();
         }
         public bool Actualizar(Raza raza)
         {
@@ -28,12 +31,13 @@ namespace BLL
 
         public string Agregar(Raza raza)
         {
-            if (razas.Exists(r => r.NombreRaza == raza.NombreRaza))
-            {
-                return $"La raza con el nombre {raza.NombreRaza} ya existe.";
-            }
-            razas.Add(raza);
-            return $"Se guardo la raza con el nombre: {raza.NombreRaza}";
+            //if (razas.Exists(r => r.NombreRaza == raza.NombreRaza))
+            //{
+            //    return $"La raza con el nombre {raza.NombreRaza} ya existe.";
+            //}
+            var mensaje= razaRepository.Agregar(raza);
+            razas = razaRepository.ObtenerTodas();
+            return mensaje;
         }
 
         public bool Eliminar(int id)

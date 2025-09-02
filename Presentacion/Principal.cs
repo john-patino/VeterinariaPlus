@@ -25,7 +25,7 @@ namespace Presentacion
                 Console.SetCursorPosition(20, 6);  Console.Write("1. Gestion Mascotas ...");
                 Console.SetCursorPosition(20, 8);  Console.Write("2. Gestion Propietario ...");
                 Console.SetCursorPosition(20, 10); Console.Write("3. Gestion Veterinario ...");
-                Console.SetCursorPosition(20, 12); Console.Write("4. Gestion Mascotas ...");
+                Console.SetCursorPosition(20, 12); Console.Write("4. Gestion Razas ...");
                 Console.SetCursorPosition(20, 14); Console.Write("5. Gestion Mascotas ...");
                 Console.SetCursorPosition(20, 16); Console.Write("0. Salir");
                 Console.SetCursorPosition(17,4);   Console.Write("M E N U   P R I N C I P A L");
@@ -45,6 +45,9 @@ namespace Presentacion
                         break;
                     case 3:
                         new VistaVeterinario().MenuVeterinarios();
+                        break;
+                    case 4:
+                        new VistaRaza().MenuRaza();
 
                         break;
                     default:

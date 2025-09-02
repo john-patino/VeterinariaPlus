@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F177AF48-82F4-4091-94D9-812253D9D0CE}</ProjectGuid>
+    <ProjectGuid>{1D7BD675-2EEB-4AB4-B2D9-27BAF4DA2F02}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Presentacion</RootNamespace>
-    <AssemblyName>Presentacion</AssemblyName>
+    <RootNamespace>Prueba</RootNamespace>
+    <AssemblyName>Prueba</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DemoMascota.cs" />
-    <Compile Include="Principal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VistaRaza.cs" />
-    <Compile Include="VistaPropietario.cs" />
-    <Compile Include="VistaVeterinario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
