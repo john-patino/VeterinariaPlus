@@ -1,4 +1,5 @@
-﻿using ENTITY;
+﻿using DAL;
+using ENTITY;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioPropietario : ICrudPropietario
+    public class ServicioPropietario : ENTITY.ICrud<Propietario>
     {
         List<Propietario> propietarios;
+        PropietarioRepository propietarioRepository;
 
         public ServicioPropietario()
         {
-            propietarios = new List<Propietario>();
+            propietarioRepository = new PropietarioRepository();
+            propietarios = propietarioRepository.ObtenerTodas();
         }
 
         public bool Actualizar(Propietario propietario)
@@ -24,8 +27,10 @@ namespace BLL
         public string Agregar(Propietario propietario)
         {
             //validar
-            propietarios.Add(propietario);
-            return $"se guardo el propiestario con el nombre :{propietario.Nombre}";
+            var mensaje = propietarioRepository.Agregar(propietario);
+            propietarios = propietarioRepository.ObtenerTodas();
+            return mensaje;
+           
         }
 
         public bool Eliminar(int id)

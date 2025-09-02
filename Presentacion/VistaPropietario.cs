@@ -2,6 +2,7 @@
 using ENTITY;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,8 +65,15 @@ namespace Presentacion
             Console.SetCursorPosition(15, 6); Console.WriteLine("ID");
             Console.SetCursorPosition(28, 6); Console.WriteLine("NOMBRE");
             Console.SetCursorPosition(40, 6); Console.WriteLine("TELEFONO");
-
-            foreach (var item in servicioPropietario.ObtenerTodas())
+            var lista = servicioPropietario.ObtenerTodas();
+            if (lista==null)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(15, 8 + salto); Console.Write("no hay datos que mostrar");
+                Console.ReadKey();
+                return;
+            }
+            foreach (var item in lista)
             {
                 Console.SetCursorPosition(15, 8 + salto); Console.Write(item.Id);
                 Console.SetCursorPosition(28, 8 + salto); Console.Write(item.Nombre);

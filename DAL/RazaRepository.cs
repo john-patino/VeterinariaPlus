@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace DAL
 {
-    public class RazaRepository : Icrud
+    public class RazaRepository : ICrud<Raza>
     {
         string ruta = "Raza.txt";
         public bool Actualizar(Raza raza)

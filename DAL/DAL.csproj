@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Icrud.cs" />
+    <Compile Include="ICrud.cs" />
+    <Compile Include="PropietarioRepository.cs" />
     <Compile Include="RazaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

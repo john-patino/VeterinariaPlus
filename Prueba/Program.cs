@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using ENTITY;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,31 +12,26 @@ namespace Prueba
     {
         static void Main(string[] args)
         {
-            //    ENTITY.Raza unica = new ENTITY.Raza(1, "unica");
-            //    ENTITY.Raza labrador = new ENTITY.Raza(2, "ladrador");
+            PropietarioRepository repo = new PropietarioRepository();
 
-            //    DAL.RazaRepository razaRepository = new DAL.RazaRepository();
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica)); 
-            //Console.WriteLine(razaRepository.Agregar(unica));
+            Propietario pedro = new Propietario(1,"pedro","46468855");
+            Propietario juan = new Propietario(1, "juan", "46468855");
 
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(unica));
-            //Console.WriteLine(razaRepository.Agregar(labrador));
+            //Console.WriteLine(repo.Agregar(pedro));
+            //Console.WriteLine(repo.Agregar(juan));
+            //Console.WriteLine(repo.Agregar(pedro));
+            //Console.WriteLine(repo.Agregar(juan));
+            //Console.WriteLine(repo.Agregar(pedro));
+            //Console.WriteLine(repo.Agregar(juan));
+            //Console.WriteLine(repo.Agregar(pedro));
+            //Console.WriteLine(repo.Agregar(pedro));
+            //Console.WriteLine(repo.Agregar(juan));
+            //Console.WriteLine(repo.Agregar(juan));
+            var lista = repo.ObtenerTodas();
 
-            BLL.ServicioRaza servicioRaza = new BLL.ServicioRaza();
-            var listaRazas = servicioRaza.ObtenerTodas();
-
-            foreach (var item in listaRazas)
+            foreach (var item in lista)
             {
-                Console.WriteLine($"{item.Id} --- > {item.NombreRaza}");
+                Console.WriteLine($"{item.Id} ---> {item.Nombre}");
             }
 
             Console.ReadKey();
