@@ -40,7 +40,7 @@ namespace BLL
 
         public Propietario ObtenerPorId(int id)
         {
-            throw new NotImplementedException();
+            return propietarios.FirstOrDefault<Propietario>(x => x.Id == id);
         }
 
         public List<Propietario> ObtenerTodas()
