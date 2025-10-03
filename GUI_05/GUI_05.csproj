@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4F995B63-45B5-439F-906C-8BC2840DFA21}</ProjectGuid>
+    <ProjectGuid>{CA5DE244-AEA7-4E5E-9857-E8C73C342641}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GUI</RootNamespace>
-    <AssemblyName>GUI</AssemblyName>
+    <RootNamespace>GUI_05</RootNamespace>
+    <AssemblyName>GUI_05</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -58,29 +58,17 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsulatPropietario.cs">
+    <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsulatPropietario.Designer.cs">
-      <DependentUpon>FrmConsulatPropietario.cs</DependentUpon>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMascota.cs">
+    <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMascota.Designer.cs">
-      <DependentUpon>FrmMascota.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPropietario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPropietario.Designer.cs">
-      <DependentUpon>FrmPropietario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRaza.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRaza.Designer.cs">
-      <DependentUpon>FrmRaza.cs</DependentUpon>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,17 +78,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsulatPropietario.resx">
-      <DependentUpon>FrmConsulatPropietario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMascota.resx">
-      <DependentUpon>FrmMascota.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPropietario.resx">
-      <DependentUpon>FrmPropietario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRaza.resx">
-      <DependentUpon>FrmRaza.cs</DependentUpon>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,16 +121,6 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{7d1de0f9-4eb6-4bf4-bb2b-5f1264315e98}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ENTITY\ENTITY.csproj">
-      <Project>{46a95cb3-4542-487d-bd09-9f59aca3fa99}</Project>
-      <Name>ENTITY</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

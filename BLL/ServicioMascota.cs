@@ -9,6 +9,7 @@ namespace BLL
 {
     public class ServicioMascota : ICrudMascota
     {
+        DAL.MascotaRepository mascotaRepository = new DAL.MascotaRepository();
         List<Mascota> mascotas = new List<Mascota>();
         public bool Actualizar(Mascota mascota)
         {
@@ -24,8 +25,9 @@ namespace BLL
             }
             try
             {
+                var msg= mascotaRepository.Agregar(mascota);
                 mascotas.Add(mascota);
-                return "se guardo la mascota";
+                return msg;
             }
             catch (Exception)
             {
