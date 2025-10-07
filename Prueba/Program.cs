@@ -19,14 +19,14 @@ namespace Prueba
             {
                 Id = 3,
                 Nombre = "Dr. Javier Méndez",
-                Telefono = "3021234567"
+                TelefonoContacto = "3021234567"
             };
 
             Veterinario ana = new Veterinario
             {
                 Id = 2,
                 Nombre = "Dra. Ana Torres",
-                Telefono = "3019876543"
+                TelefonoContacto = "3019876543"
             };
 
 
@@ -35,7 +35,7 @@ namespace Prueba
             var lista = servicio.ObtenerTodas();
             foreach (var item in lista)
             {
-                Console.WriteLine($"{item.Id} --> {item.Nombre}  --> {item.Telefono}");
+                Console.WriteLine($"{item.Id} --> {item.Nombre}  --> {item.TelefonoContacto}");
             }
             Console.ReadKey();
         }

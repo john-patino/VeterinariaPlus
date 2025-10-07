@@ -34,7 +34,7 @@ namespace GUI
             grilla2.Rows.Clear();
             foreach (var item in servicio.ObtenerTodas())
             {
-                grilla2.Rows.Add(item.Id, item.Nombre, item.Telefono);
+                grilla2.Rows.Add(item.Id, item.Nombre, item.TelefonoContacto);
             }
         }
     }

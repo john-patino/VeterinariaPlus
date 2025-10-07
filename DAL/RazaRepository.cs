@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace DAL
 {
-    public class RazaRepository : ICrud<Raza>
+    public class RazaRepository : ICrudLectura<Raza>, ICrudEscritura<Raza>
     {
         string ruta = "Raza.txt";
         public bool Actualizar(Raza raza)
@@ -41,10 +41,10 @@ namespace DAL
 
         public Raza ObtenerPorId(int id)
         {
-            throw new NotImplementedException();
+            return ObtenerTodas().FirstOrDefault<Raza>(x => x.Id == id);
         }
 
-        public List<Raza> ObtenerTodas()
+        public IList<Raza> ObtenerTodas()
         {
             List<Raza> listaRazas = new List<Raza>();
             try

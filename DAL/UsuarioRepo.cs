@@ -2,22 +2,40 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class UsuarioRepo : ICrudVetrinario<Usuarios>
+    public class UsuarioRepo : ICrudLectura<Usuario>, ICrudEscritura<Usuario>
     {
-        public bool Actualizar(Usuarios entity)
+        string ruta = "usuario.txt";
+
+        public bool Actualizar(Usuario entity)
         {
             throw new NotImplementedException();
         }
 
-        public string Agregar(Usuarios entity)
+        public string Agregar(Usuario entity)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                //1
+                StreamWriter sw = new StreamWriter(ruta, true);
+                //2
+                sw.WriteLine(entity.Formatear());
+                // cerrar
+                sw.Close();
+                return $" se guardo la raza {entity.Nombre}";
+            }
+            catch (Exception ex)
+            {
+                return "error al guardar ..." + "\n" + ex.Message;
+            }
         }
 
         public bool Eliminar(int id)
@@ -25,14 +43,45 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public Usuarios ObtenerPorId(int id)
+        public Usuario ObtenerPorId(int id)
         {
-            throw new NotImplementedException();
+            return ObtenerTodas().FirstOrDefault<Usuario>(x => x.Id == id);
         }
 
-        public List<Usuarios> ObtenerTodas()
+        public IList<Usuario> ObtenerTodas()
         {
-            throw new NotImplementedException();
+            List<Usuario> lista = new List<Usuario>();
+            try
+            {
+                StreamReader lector = new StreamReader(ruta);
+                while (!lector.EndOfStream)
+                {
+                    var linea = lector.ReadLine();
+                    lista.Add(MapearUsuario(linea));
+                }
+                lector.Close();
+                return lista;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        private Usuario MapearUsuario(string linea)
+        {
+            //   1;unica
+
+            Usuario usuario = new Usuario();
+
+            var aux = linea.Split(';');
+
+            usuario.Id = int.Parse(aux[0]);
+
+            usuario.Nombre = aux[1];
+
+            return usuario;
+            //raza.Id = int.Parse(linea.Split(';')[0]);
         }
     }
 }

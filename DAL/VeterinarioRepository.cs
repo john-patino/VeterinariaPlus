@@ -8,13 +8,44 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class VeterinarioRepository: ICrud<Veterinario>
+    public class VeterinarioRepository: ICrudLectura<Veterinario>
     {
         private string ruta="veterinario.txt";
 
         public bool Actualizar(Veterinario entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (!File.Exists(ruta)) return false;
+
+            try
+            {
+                var lineas = File.ReadAllLines(ruta).ToList();
+                var actualizado = false;
+
+                for (int i = 0; i < lineas.Count; i++)
+                {
+                    if (string.IsNullOrWhiteSpace(lineas[i])) continue;
+
+                    var v = Mappear(lineas[i]);
+                    if (v.Id == entity.Id)
+                    {
+                        lineas[i] = entity.Formatear(); // reemplaza la línea
+                        actualizado = true;
+                        break;
+                    }
+                }
+
+                if (actualizado)
+                {
+                    File.WriteAllLines(ruta, lineas);
+                }
+
+                return actualizado;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public string Agregar(Veterinario entity)
@@ -37,15 +68,40 @@ namespace DAL
 
         public bool Eliminar(int id)
         {
-            throw new NotImplementedException();
+            if (!File.Exists(ruta)) return false;
+
+            try
+            {
+                var lineas = File.ReadAllLines(ruta).ToList();
+                int antes = lineas.Count;
+
+                // Elimina TODAS las líneas cuyo primer campo (Id) coincida
+                lineas = lineas
+                    .Where(l =>
+                    {
+                        if (string.IsNullOrWhiteSpace(l)) return false; // descarta vacías
+                        var f = l.Split(';');
+                        return !(f.Length > 0 && int.TryParse(f[0], out var lid) && lid == id);
+                    })
+                    .ToList();
+
+                if (lineas.Count == antes) return false; // no encontró el id
+
+                File.WriteAllLines(ruta, lineas);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public Veterinario ObtenerPorId(int id)
         {
-            throw new NotImplementedException();
+            return ObtenerTodas().FirstOrDefault<Veterinario>(x => x.Id == id);
         }
 
-        public List<Veterinario> ObtenerTodas()
+        public IList<Veterinario> ObtenerTodas()
         {
             try
             {
@@ -75,7 +131,7 @@ namespace DAL
 
             veterinario.Id = int.Parse(aux[0]);
             veterinario.Nombre = aux[1];
-            veterinario.Telefono = aux[2];
+            veterinario.TelefonoContacto = aux[2];
 
             return veterinario;
         }

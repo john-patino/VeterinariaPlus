@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ENTITY
 {
-    public class Usuarios : Persona
+    public class Usuario : Persona
     {
         public override string Formatear()
         {
-            throw new NotImplementedException();
+            return $"{Id};{Nombre};{TelefonoContacto}";
         }
     }
 }

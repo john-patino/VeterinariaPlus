@@ -5,15 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace ENTITY
 {
-    public interface ICrudVetrinario<T>
+    public interface ICrudEscritura<T>
     {
         string Agregar(T entity);
-        T ObtenerPorId(int id);
-        List<T> ObtenerTodas();
         bool Actualizar(T entity);
         bool Eliminar(int id);
 
+       
+        
+        
+       
     }
 }

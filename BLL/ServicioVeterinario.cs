@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioVeterinario : ICrud<Veterinario>
+    public class ServicioVeterinario //: ICrudLectura<Veterinario>
     {
-        List<Veterinario> listaVeterinarios;
+        IList<Veterinario> listaVeterinarios;
         VeterinarioRepository veterinarioRepository;
         public ServicioVeterinario()
         {
@@ -47,7 +47,7 @@ namespace BLL
             return null;
         }
 
-        public List<Veterinario> ObtenerTodas()
+        public IList<Veterinario> ObtenerTodas()
         {
             return listaVeterinarios;
         }

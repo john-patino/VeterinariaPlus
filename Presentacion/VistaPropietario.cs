@@ -77,7 +77,7 @@ namespace Presentacion
             {
                 Console.SetCursorPosition(15, 8 + salto); Console.Write(item.Id);
                 Console.SetCursorPosition(28, 8 + salto); Console.Write(item.Nombre);
-                Console.SetCursorPosition(40, 8 + salto); Console.Write(item.Telefono);
+                Console.SetCursorPosition(40, 8 + salto); Console.Write(item.TelefonoContacto);
                 Console.SetCursorPosition(15, 9 + salto); Console.Write("-------------------------------------------");
                 salto++;
             }
@@ -95,7 +95,7 @@ namespace Presentacion
             Console.WriteLine("Nombres: ");
             propietario.Nombre = (Console.ReadLine());
             Console.WriteLine("Telefono: ");
-            propietario.Telefono = (Console.ReadLine());
+            propietario.TelefonoContacto = (Console.ReadLine());
 
             var mensaje = servicioPropietario.Agregar(propietario);
             Console.WriteLine(mensaje);

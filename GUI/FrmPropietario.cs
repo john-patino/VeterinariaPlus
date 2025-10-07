@@ -121,7 +121,7 @@ namespace GUI
             }
             txtCodigo.Text = propietario.Id.ToString();
             txtNombre.Text = propietario.Nombre;
-            txtTelefono.Text = propietario.Telefono;
+            txtTelefono.Text = propietario.TelefonoContacto;
             txtCodigo.Focus();
         }
 

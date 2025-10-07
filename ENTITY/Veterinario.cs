@@ -10,7 +10,7 @@ namespace ENTITY
     {
         public override string Formatear()
         {
-            return $"{Id};{Nombre};{Telefono}";
+            return $"{Id};{Nombre};{TelefonoContacto}";
         }
     }
 }

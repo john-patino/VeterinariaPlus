@@ -16,12 +16,12 @@ namespace ENTITY
         {
             Id = id;
             Nombre = nombre;
-            Telefono = telefono;
+            TelefonoContacto = telefono;
         }
 
         public override string Formatear()
         {
-            return $"{Id};{Nombre};{Telefono}";
+            return $"{Id};{Nombre};{TelefonoContacto}";
         }
     }
 }

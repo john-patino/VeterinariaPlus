@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class FrmRaza: Form
     {
-        ICrudRaza servicio = new ServicioRaza();
+        ServicioRaza servicio = new ServicioRaza();
         public FrmRaza()
         {
             InitializeComponent();

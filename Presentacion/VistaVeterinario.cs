@@ -74,7 +74,7 @@ namespace Presentacion
             {
                 Console.SetCursorPosition(15, 9 + salto); Console.Write(item.Id);
                 Console.SetCursorPosition(28, 9 + salto); Console.Write(item.Nombre);
-                Console.SetCursorPosition(43, 9 + salto); Console.Write(item.Telefono);
+                Console.SetCursorPosition(43, 9 + salto); Console.Write(item.TelefonoContacto);
                 Console.SetCursorPosition(15, 10 + salto); Console.Write("-------------------------------------------");
                 salto+=2;
             }
@@ -93,7 +93,7 @@ namespace Presentacion
             {
                 //Console.WriteLine($"ID: {veterinario.Id}");
                 Console.WriteLine($"Nombre: {veterinario.Nombre}");
-                Console.WriteLine($"Telefono: {veterinario.Telefono}");
+                Console.WriteLine($"Telefono: {veterinario.TelefonoContacto}");
             }
             else
             {
@@ -113,7 +113,7 @@ namespace Presentacion
             Console.Write("Ingrese Nombre: ");
             veterinario.Nombre = Console.ReadLine();
             Console.Write("Ingrese Telefono: ");
-            veterinario.Telefono = Console.ReadLine();
+            veterinario.TelefonoContacto = Console.ReadLine();
 
             var mensaje= servicioVeterinario.Agregar(veterinario);
             Console.WriteLine(mensaje);

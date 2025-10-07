@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICrudVetrinario.cs" />
+    <Compile Include="ICrudEscritura.cs" />
+    <Compile Include="ICrudLectura.cs" />
     <Compile Include="MascotaRepository.cs" />
     <Compile Include="PropietarioRepository.cs" />
     <Compile Include="RazaRepository.cs" />

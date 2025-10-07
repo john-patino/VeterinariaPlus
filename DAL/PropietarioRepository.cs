@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PropietarioRepository: ICrud<Propietario>
+    public class PropietarioRepository: ICrudLectura<Propietario>, ICrudEscritura<Propietario>
     {
         private string ruta="propietario.txt";
 
@@ -24,7 +24,7 @@ namespace DAL
                 //1
                 StreamWriter escritor = new StreamWriter(ruta, true);
                 //2
-                escritor.WriteLine($"{entity.Id};{entity.Nombre};{entity.Telefono}");
+                escritor.WriteLine($"{entity.Id};{entity.Nombre};{entity.TelefonoContacto}");
                 //3
                 escritor.Close();
                 return $"se guardo el propietario {entity.Nombre}";
@@ -44,10 +44,10 @@ namespace DAL
 
         public Propietario ObtenerPorId(int id)
         {
-            throw new NotImplementedException();
+            return ObtenerTodas().FirstOrDefault<Propietario>(x => x.Id == id);
         }
 
-        public List<Propietario> ObtenerTodas()
+        public IList<Propietario> ObtenerTodas()
         {
             try
             {
@@ -75,7 +75,7 @@ namespace DAL
 
             propietario.Id = int.Parse(linea.Split(';')[0]);
             propietario.Nombre = linea.Split(';')[1];
-            propietario.Telefono = linea.Split(';')[2];
+            propietario.TelefonoContacto = linea.Split(';')[2];
             return propietario;
         }
     }

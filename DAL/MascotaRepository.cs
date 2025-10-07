@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using ENTITY;
 namespace DAL
 {
-    public class MascotaRepository : ICrud<Mascota>
+    public class MascotaRepository : ICrudLectura<Mascota>, ICrudEscritura<Mascota>
     {
         string ruta = "mascotas.txt";
         public bool Actualizar(Mascota entity)
@@ -44,7 +44,7 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public List<Mascota> ObtenerTodas()
+        public IList<Mascota> ObtenerTodas()
         {
             throw new NotImplementedException();
         }

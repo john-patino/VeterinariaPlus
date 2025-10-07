@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioPropietario : ENTITY.ICrud<Propietario>
+    public class ServicioPropietario : ENTITY.ICrudLectura<Propietario>, ENTITY.ICrudEscritura<Propietario>
     {
-        List<Propietario> propietarios;
+        IList<Propietario> propietarios;
         PropietarioRepository propietarioRepository;
 
         public ServicioPropietario()
@@ -43,7 +43,7 @@ namespace BLL
             return propietarios.FirstOrDefault<Propietario>(x => x.Id == id);
         }
 
-        public List<Propietario> ObtenerTodas()
+        public IList<Propietario> ObtenerTodas()
         {
             return propietarios;
         }

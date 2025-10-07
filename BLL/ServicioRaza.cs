@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioRaza : ICrudRaza
+    public class ServicioRaza //: ICrudRaza
     {
-        List<Raza> razas;
+        IList<Raza> razas;
         RazaRepository razaRepository;
         public ServicioRaza()
         {
@@ -65,7 +65,7 @@ namespace BLL
             return null;
         }
 
-        public List<Raza> ObtenerTodas()
+        public IList<Raza> ObtenerTodas()
         {
             return razas;
         }
