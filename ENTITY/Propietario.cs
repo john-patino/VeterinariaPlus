@@ -19,7 +19,7 @@ namespace ENTITY
             TelefonoContacto = telefono;
         }
 
-        public override string Formatear()
+        public override string ToString()
         {
             return $"{Id};{Nombre};{TelefonoContacto}";
         }

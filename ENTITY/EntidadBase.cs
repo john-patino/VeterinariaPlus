@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ENTITY
 {
-    public class Usuario : Persona
+    public abstract class EntidadBase
     {
-        public override string ToString()
-        {
-            return $"{Id};{Nombre};{TelefonoContacto}";
-        }
+        //public abstract string Formatear();// aagrega el ; entre atributos
     }
 }

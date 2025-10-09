@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENTITY
 {
-    public abstract class Persona
+    public abstract class Persona: EntidadBase
     {
 
       
@@ -16,6 +16,6 @@ namespace ENTITY
         public string TelefonoContacto { get; set; }
         //public DateTime FechaNacimiento { get; set; }
 
-        public abstract string Formatear();// aagrega el ; entre atributos
+      
     }
 }

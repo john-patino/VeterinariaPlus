@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.MascotaRepository" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAQAAQgAACAAgAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>MascotaRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.PropietarioRepository" Collapsed="true">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAQAAQgAACAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>PropietarioRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.RazaRepository" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAQAAQgAACAAAAAAAAAAAAAAAAIAAAAAAAABAA=</HashCode>
+      <FileName>RazaRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.UsuarioRepo" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAQAAQgAACAAAAAAAAAAAAAAAAIAAAAAAAEAAA=</HashCode>
+      <FileName>UsuarioRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.VeterinarioRepository" Collapsed="true">
+    <Position X="1" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAQAAQgAACAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>VeterinarioRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ENTITY.ICrudEscritura&lt;T&gt;" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ICrudEscritura.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ENTITY.ICrudLectura&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICrudLectura.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

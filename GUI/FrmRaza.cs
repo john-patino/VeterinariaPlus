@@ -88,7 +88,7 @@ namespace GUI
                 return;
             }
             txtCodigo.Text = raza.Id.ToString();
-            txtNombre.Text = raza.NombreRaza;
+            txtNombre.Text = raza.Nombre;
         }
 
         private void lstRazas_SelectedIndexChanged(object sender, EventArgs e)

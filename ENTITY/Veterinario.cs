@@ -8,7 +8,7 @@ namespace ENTITY
 {
     public class Veterinario : Persona
     {
-        public override string Formatear()
+        public override string ToString()
         {
             return $"{Id};{Nombre};{TelefonoContacto}";
         }

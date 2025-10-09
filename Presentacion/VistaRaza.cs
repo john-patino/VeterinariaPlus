@@ -68,7 +68,7 @@ namespace Presentacion
             foreach (var item in servicio.ObtenerTodas())
             {
                 Console.SetCursorPosition(15, 8 + salto); Console.Write(item.Id);
-                Console.SetCursorPosition(28, 8 + salto); Console.Write(item.NombreRaza);
+                Console.SetCursorPosition(28, 8 + salto); Console.Write(item.Nombre);
                 
                 Console.SetCursorPosition(15, 9 + salto); Console.Write("-------------------------------------------");
                 salto++;
@@ -85,7 +85,7 @@ namespace Presentacion
             Console.WriteLine("Identificacion: ");
             raza.Id = int.Parse(Console.ReadLine());
             Console.WriteLine("Nombres: ");
-            raza.NombreRaza = (Console.ReadLine());
+            raza.Nombre = (Console.ReadLine());
             
 
             var mensaje = servicio.Agregar(raza);

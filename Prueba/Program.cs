@@ -21,22 +21,15 @@ namespace Prueba
                 Nombre = "Dr. Javier Méndez",
                 TelefonoContacto = "3021234567"
             };
+            Console.WriteLine(javier.Nombre);
+            var x = javier;
+            var y = javier;
 
-            Veterinario ana = new Veterinario
-            {
-                Id = 2,
-                Nombre = "Dra. Ana Torres",
-                TelefonoContacto = "3019876543"
-            };
+            y.Nombre = "johnp";
 
-
-            //Console.WriteLine(servicio.Agregar(javier));
-
-            var lista = servicio.ObtenerTodas();
-            foreach (var item in lista)
-            {
-                Console.WriteLine($"{item.Id} --> {item.Nombre}  --> {item.TelefonoContacto}");
-            }
+            Console.WriteLine(x.Nombre);
+            Console.WriteLine("************************");
+            Console.WriteLine(javier.Nombre);
             Console.ReadKey();
         }
     }

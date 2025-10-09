@@ -22,7 +22,7 @@ namespace BLL
             var razaEncontrada = ObtenerPorId(raza.Id);
             if (razaEncontrada != null)
             {
-                razaEncontrada.NombreRaza = raza.NombreRaza;
+                razaEncontrada.Nombre = raza.Nombre;
                 return true;
             }   
 

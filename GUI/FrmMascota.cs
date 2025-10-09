@@ -43,7 +43,7 @@ namespace GUI
             Mascota mascota = new Mascota();
 
             mascota.Id = int.Parse(txtCodigo.Text);
-            mascota.NombreMascota = txtNombre.Text;
+            mascota.Nombre = txtNombre.Text;
             var raza = servicioRaza.ObtenerPorId(Convert.ToInt16(cbRazas.SelectedValue));
             mascota.AsignarRaza(raza);
 

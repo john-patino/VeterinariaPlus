@@ -23,10 +23,10 @@ namespace DAL
                 //1
                 StreamWriter sw = new StreamWriter(ruta,true);
                 //2
-                sw.WriteLine($"{raza.Id};{raza.NombreRaza}");
+                sw.WriteLine($"{raza.Id};{raza.Nombre}");
                 // cerrar
                 sw.Close();
-                return $" se guardo la raza {raza.NombreRaza}";
+                return $" se guardo la raza {raza.Nombre}";
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace DAL
 
             raza.Id = int.Parse(aux[0]);
 
-            raza.NombreRaza = aux[1];
+            raza.Nombre = aux[1];
 
             return raza;
                  //raza.Id = int.Parse(linea.Split(';')[0]);
