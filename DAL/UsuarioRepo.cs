@@ -27,7 +27,7 @@ namespace DAL
                 //1
                 StreamWriter sw = new StreamWriter(ruta, true);
                 //2
-                sw.WriteLine(entity.Formatear());
+                sw.WriteLine(entity.ToString());
                 // cerrar
                 sw.Close();
                 return $" se guardo la raza {entity.Nombre}";

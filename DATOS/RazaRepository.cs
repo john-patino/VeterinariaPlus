@@ -29,7 +29,12 @@ namespace DATOS
                 return null;
             }
         }
-        
+
+        internal Raza ObtenerPorId(int id)
+        {
+            return Consultar().FirstOrDefault<Raza>(x => x.Id == id);
+        }
+
         private Raza MapearRaza(string linea)
         {
             //   1;unica

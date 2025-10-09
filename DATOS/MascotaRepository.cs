@@ -5,10 +5,11 @@ using System.Linq;
 using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
+using DATOS;
 using ENTITY;
 namespace DAL
 {
-    public class MascotaRepository : ICrudLectura<Mascota>, ICrudEscritura<Mascota>
+    public class MascotaRepository : RepositorioBase<Mascota>
     {
         string ruta = "mascotas.txt";
 
@@ -21,7 +22,7 @@ namespace DAL
                 var mascota = ObtenerPorId(entity.Id);
                 mascota.Nombre = entity.Nombre;
                 mascota.AsignarRaza(entity.Raza);
-                Actualizar(ObtenerTodas());
+                Actualizar(Consultar());
                 return true;
             }
             catch (Exception)
@@ -52,35 +53,18 @@ namespace DAL
 
         }
 
-        public string Agregar(Mascota entity)
-        {
-
-            try
-            {
-                //1
-                StreamWriter sw = new StreamWriter(ruta, true);
-                //2
-                sw.WriteLine($"{entity.Id};{entity.Nombre}:{entity.Raza.Id}");
-                // cerrar
-                sw.Close();
-                return $" se guardo la raza {entity.Nombre}";
-            }
-            catch (Exception ex)
-            {
-                return "error al guardar ..." + "\n" + ex.Message;
-            }
-        }
+        
 
         public bool Eliminar(int id)
         {
-            var lista = ObtenerTodas();
+            var lista = Consultar();
             lista.Remove(ObtenerPorId(id));
             return Actualizar(lista);
         }
 
         public Mascota ObtenerPorId(int id)
         {
-            return ObtenerTodas().FirstOrDefault<Mascota>(x => x.Id == id);
+            return Consultar().FirstOrDefault<Mascota>(x => x.Id == id);
 
             //foreach (var item in ObtenerTodas())
             //{
@@ -92,7 +76,7 @@ namespace DAL
             //return null;
         }
 
-        public IList<Mascota> ObtenerTodas()
+        public override IList<Mascota> Consultar()
         {
             try
             {
